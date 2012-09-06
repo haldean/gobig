@@ -25,3 +25,10 @@ func TestDecomposeCompose(t *testing.T) {
     t.Error("Compose should be decompose's inverse.")
   }
 }
+
+func TestResize(t *testing.T) {
+  c := Decompose(1 << 63 | 1)
+  if len(c.value) != 2 {
+    t.Error("Length of c should be 2")
+  }
+}
